@@ -48,7 +48,7 @@ imports = bdg_imports.iloc[:,1:]
 exports_melted = exports.melt(id_vars='Country', var_name='Year', value_name='Exports')
 imports_melted = imports.melt(id_vars='Country', var_name='Year', value_name='Imports')
 
-st.write("#")
+st.write("###")
 
 selected_option = option_menu(
         menu_title= None,
