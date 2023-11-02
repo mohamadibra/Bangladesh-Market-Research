@@ -171,7 +171,7 @@ if selected_option == 'Economic Data':
                     shaping its future are meticulously dissected. Gain comprehensive insights into key indicators
                     defining Bangladesh's economic narrative. Navigate challenges and seize opportunities, all while pinpointing major 
                     contributors and anticipating their impact. Additionally, a detailed list of key players in the building and
-                    construction materials sector is included. This curated list, sortable by sectors such as `Construction and
+                    construction materials sector is included. This curated list, sortable by sectors: `Construction and
                     Engineering`, `Industry and Manufacturing`, `Real Estate and Development`, and `Business and Supply Chain`,
                     provides valuable information including company URLs, names, and notable projects. Embark on this enlightening
                     journey to gain valuable insights into the path ahead for this dynamic nation.**
