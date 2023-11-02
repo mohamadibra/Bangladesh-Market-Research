@@ -156,14 +156,30 @@ if selected_option == 'Economic Data':
 
     if econimic_menu == "Population":
         
-        st.markdown("""
-            **Step into the world of Bangladesh's economy. Our Market Research Analysis breaks down the numbers and trends
-            that will shape its future. Through easy-to-understand charts and clear explanations, we invite you to explore 
-            the key indicators that will define Bangladesh's economic narrative in the years to come, navigate through challenges and shape
-            them as opportunities, pinpoint the major contributors and anticipate what each brings to the table.
-            Join us on this journey to understand what lies ahead for this dynamic nation.**
-            """)    
         
+        # st.markdown("""
+        #     **Step into the world of Bangladesh's economy. Our Market Research Analysis breaks down the numbers and trends
+        #     that will shape its future. Through easy-to-understand charts and clear explanations, we invite you to explore 
+        #     the key indicators that will define Bangladesh's economic narrative in the years to come, navigate through challenges and shape
+        #     them as opportunities, pinpoint the major contributors and anticipate what each brings to the table.
+        #     Join us on this journey to understand what lies ahead for this dynamic nation.**
+        #     """)    
+        
+        st.markdown("##")
+        st.markdown("""
+                    Explore Bangladesh's economic landscape with the Market Research Analysis provided. The data and trends
+                    shaping its future are meticulously dissected for your benefit. Gain comprehensive insights into key indicators
+                    defining Bangladesh's economic narrative. Navigate challenges and seize opportunities, all while pinpointing major 
+                    contributors and anticipating their impact. Additionally, a detailed list of key players in the building and
+                    construction materials sector is included. This curated list, sortable by sectors such as 'Construction and
+                    Engineering', 'Industry and Manufacturing', 'Real Estate and Development', and 'Business and Supply Chain',
+                    provides valuable information including company URLs, names, and notable projects. Embark on this enlightening
+                    journey to gain valuable insights into the path ahead for this dynamic nation.
+                    """)
+        st.markdown("##")
+
+        st.title("Population")
+
         left_pop, right_pop = st.columns(2)
         
         with left_pop:
@@ -266,6 +282,8 @@ if selected_option == 'Economic Data':
         #             unsafe_allow_html=True)
 
         
+        st.title("Gross domestic product (GDP)")
+        
         gdp_col1, gdp_col2 = st.columns([0.55,0.45])
         
         with gdp_col1:
@@ -353,6 +371,8 @@ if selected_option == 'Economic Data':
         
         st.divider()
         
+        st.title("GDP Per Capita")
+        
         left_percap, right_percap = st.columns(2)
         
         with left_percap:
@@ -439,11 +459,14 @@ if selected_option == 'Economic Data':
         
     if econimic_menu == "Labour":
         
+        st.title("Unemployment")
+
+        
         left_labour, right_labour = st.columns(2)
         
         with left_labour:
             
-            st.subheader("Unemployment Rate")
+            st.subheader("Unemployment Rate by Year")
             
             fig_labour = make_subplots()
 
