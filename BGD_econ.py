@@ -52,7 +52,7 @@ imports = bdg_imports.iloc[:,1:]
 exports_melted = exports.melt(id_vars='Country', var_name='Year', value_name='Exports')
 imports_melted = imports.melt(id_vars='Country', var_name='Year', value_name='Imports')
 
-st.write("###")
+st.write("#####")
 
 selected_option = option_menu(
         menu_title= None,
@@ -64,13 +64,13 @@ selected_option = option_menu(
         "container": {
             "padding": "10px",
             # "background-color": "#352f44",
-            "box-shadow": "0px 0px 5px 0px rgba(0, 0, 0, 0.25)",
+            "box-shadow": "0px 0px 5px 0px rgba(0, 0, 0, 0)",
         },
         "icon":{
             "display": "none",
         },
         "nav-link": {
-            "font-size": "16px",
+            "font-size": "20px",
             "text-align": "center",
             "margin": "0px 0px",
             # "color": "#ffffff",
@@ -123,9 +123,10 @@ labour['label_unemployment_rate'] = labour['Unemployment Rate (%)'].apply(lambda
 if selected_option == 'Economic Data':
 
     st.sidebar.image('./unitech.png')
-    st.sidebar.title("Bangladesh Economic Research")
+    # st.sidebar.title(":blue[Bangladesh Economic Research]")
+    st.sidebar.markdown("""<h1>Bangladesh Economic Research</h1>""",unsafe_allow_html=True)
     with st.sidebar:
-       econimic_menu =  option_menu(
+        econimic_menu =  option_menu(
             menu_title= None,
             options= ['Population', 'GDP', 'Labour', 'Trade'],
             menu_icon=None,
@@ -134,13 +135,13 @@ if selected_option == 'Economic Data':
             "container": {
                 "padding": "20px",
                 # "background-color": "#352f44",
-                "box-shadow": "0px 0px 5px 0px rgba(0, 0, 0, 0.25)",
+                "box-shadow": "0px 0px 5px 0px rgba(0, 0, 0, 0)",
             },
             "icon":{
                 "display": "none",
             },
             "nav-link": {
-                "font-size": "12px",
+                "font-size": "16px",
                 "text-align": "center",
                 "margin": "0px 0px",
                 # "color": "#ffffff",
@@ -170,7 +171,9 @@ if selected_option == 'Economic Data':
         #     Join us on this journey to understand what lies ahead for this dynamic nation.**
         #     """)    
         
-        st.markdown("##")
+        # st.markdown("##")
+        st.markdown("""<h1 style="color:#25A6E0">Unitech Bangladesh Market Research</h1>""",unsafe_allow_html=True)
+
         st.markdown("""
                     **Explore Bangladesh's economic landscape with the Market Research Analysis provided. The data and trends
                     shaping its future are meticulously dissected. Gain comprehensive insights into key indicators
@@ -183,15 +186,19 @@ if selected_option == 'Economic Data':
                     journey to gain valuable insights into the path ahead for this dynamic nation.**
                     """,unsafe_allow_html=True
                     )
-        st.markdown("##")
+        st.markdown("#####")
 
-        st.title("Population")
+        # st.title("Population")
+        st.markdown("""<h1 style="color:#25A6E0">Population</h1>""",unsafe_allow_html=True)
+
 
         left_pop, right_pop = st.columns(2)
         
         with left_pop:
         
-            st.subheader("Population by Year")
+            # st.subheader("Population by Year")
+            st.markdown("""<h4>Population by Year</h4>""",unsafe_allow_html=True)
+
             fig_pop = go.Figure()
 
             fig_pop = make_subplots(shared_xaxes=False)
@@ -217,7 +224,9 @@ if selected_option == 'Economic Data':
             
         with right_pop:
             
-            st.subheader("Annual % Change by Year")
+            # st.subheader("Annual % Change by Year")
+            st.markdown("""<h4>Annual % Change by Year</h4>""",unsafe_allow_html=True)
+
             fig_pop = go.Figure()
 
             fig_pop = make_subplots(shared_xaxes=False)
@@ -241,8 +250,10 @@ if selected_option == 'Economic Data':
 
             st.plotly_chart(fig_pop,use_container_width=True)
         
-        st.subheader("Findings")
-        
+        # st.subheader("Findings")
+        st.markdown("""<h2 style="color:#25A6E0">Findings</h2>""",unsafe_allow_html=True)
+
+
         # st.markdown(
         #     """
         #     <h1 style='margin-top:80px;text-align:center;'></h1>
@@ -265,8 +276,10 @@ if selected_option == 'Economic Data':
         
         st.divider()
         
-        st.subheader("Countries Population")
-        st.subheader("")
+        # st.subheader("Countries Population")
+        st.markdown("""<h1 style="color:#25A6E0">Countries Population</h1>""",unsafe_allow_html=True)
+
+        st.markdown("##")
         
         world_population = pd.read_csv("world_population.csv")
         p1_pop = world_population[:108]
@@ -289,13 +302,17 @@ if selected_option == 'Economic Data':
         #             unsafe_allow_html=True)
 
         
-        st.title("Gross domestic product (GDP)")
+        # st.title("Gross domestic product (GDP)")
+        st.markdown("""<h1 style="color:#25A6E0">Gross domestic product (GDP)</h1>""",unsafe_allow_html=True)
+
         
         gdp_col1, gdp_col2 = st.columns([0.55,0.45])
         
         with gdp_col1:
         
-            st.subheader("Real GDP by Year")
+            # st.subheader("Real GDP by Year")
+            st.markdown("""<h4>Real GDP by Year</h4>""",unsafe_allow_html=True)
+
             st.markdown("""
                     <small style="color:#59afe1">--Real GDP: Left y-axis, GDP YoY: Right y-axis--</small> """,
                     unsafe_allow_html=True)
@@ -323,7 +340,9 @@ if selected_option == 'Economic Data':
         
         with gdp_col2:
             
-            st.subheader("GDP % Growth by Year")
+            # st.subheader("GDP % Growth by Year")
+            st.markdown("""<h4>GDP % Growth by Year</h4>""",unsafe_allow_html=True)
+
             st.markdown("#")
             fig_gdp_growth = make_subplots()
 
@@ -347,7 +366,9 @@ if selected_option == 'Economic Data':
 
             st.plotly_chart(fig_gdp_growth,use_container_width=True)
     
-        st.subheader("Findings")
+        # st.subheader("Findings")
+        st.markdown("""<h2 style="color:#25A6E0">Findings</h2>""",unsafe_allow_html=True)
+
             
         st.markdown("""
                         - GDP has been steadily increasing from 52B in 2000 to 460B in 2022 with a 767% increase and 43% increase
@@ -362,8 +383,10 @@ if selected_option == 'Economic Data':
                         This suggests that the economy is well-prepared for sustained growth and development. These findings reflect a positive outlook for Bangladesh.
                         """)
             
-        st.subheader("Countries GDP")
-        st.subheader("")
+        # st.subheader("Countries GDP")
+        st.markdown("""<h1 style="color:#25A6E0">Countries GDP</h1>""",unsafe_allow_html=True)
+
+        st.markdown("##")
         
         world_gdp = pd.read_csv("world_gdp.csv")
         p1_gdp = world_gdp[:104]
@@ -378,12 +401,16 @@ if selected_option == 'Economic Data':
         
         st.divider()
         
-        st.title("GDP Per Capita")
+        # st.title("GDP Per Capita")
+        st.markdown("""<h1 style="color:#25A6E0">GDP Per Capita</h1>""",unsafe_allow_html=True)
+
         
         left_percap, right_percap = st.columns(2)
         
         with left_percap:
-            st.subheader("GDP per Capita by Year")
+            # st.subheader("GDP per Capita by Year")
+            st.markdown("""<h4>GDP per Capita by Year</h4>""",unsafe_allow_html=True)
+
             
             fig_dgp_capita = go.Figure()
 
@@ -411,7 +438,9 @@ if selected_option == 'Economic Data':
             
         with right_percap:
             
-            st.subheader("Per Capita % Growth by Year")
+            # st.subheader("Per Capita % Growth by Year")
+            st.markdown("""<h4>Per Capita % Growth by Year</h4>""",unsafe_allow_html=True)
+
             
             fig_dgp_capita = go.Figure()
 
@@ -437,7 +466,9 @@ if selected_option == 'Economic Data':
             
             st.plotly_chart(fig_dgp_capita,use_container_width=True)
         
-        st.subheader("Findings")
+        # st.subheader("Findings")
+        st.markdown("""<h2 style="color:#25A6E0">Findings</h2>""",unsafe_allow_html=True)
+
         
         st.markdown("""
                     - The GDP per capita has demonstrated a consistent rise, climbing from \\$413 in 2000 to \\$2688 in 2022.
@@ -450,8 +481,10 @@ if selected_option == 'Economic Data':
         
         st.divider()
         
-        st.subheader("Countries GDP Per Capita")
-        st.subheader("")
+        # st.subheader("Countries GDP Per Capita")
+        st.markdown("""<h1 style="color:#25A6E0">Countries GDP Per Capita</h1>""",unsafe_allow_html=True)
+
+        st.markdown("##")
         
         world_gdp_per_capita = pd.read_csv("Countries_gdp_per_capita.csv")
         p1 = world_gdp_per_capita[:104]
@@ -466,15 +499,16 @@ if selected_option == 'Economic Data':
         
     if econimic_menu == "Labour":
         
-        st.title("Unemployment")
+        # st.title("Unemployment")
+        st.markdown("""<h1 style="color:#25A6E0">Unemployment</h1>""",unsafe_allow_html=True)
 
-        
         left_labour, right_labour = st.columns(2)
         
         with left_labour:
             
-            st.subheader("Unemployment Rate by Year")
-            
+            # st.subheader("Unemployment Rate by Year")
+            st.markdown("""<h4>Unemployment Rate by Year</h4>""",unsafe_allow_html=True)
+
             fig_labour = make_subplots()
 
             fig_labour.add_trace(go.Scatter(x=labour['date'], y=labour['Unemployment Rate (%)'], mode='lines+markers+text', name='Unemployment Rate (%)', marker=dict(color='#41506b'))) # text=labour['Unemployment Rate (%)'], texttemplate='%{text:.1f}', textposition='top center'
@@ -498,8 +532,9 @@ if selected_option == 'Economic Data':
             
             with right_labour:
                 
-                st.subheader("Unemployment Annual Change")
-                
+                # st.subheader("Unemployment Annual Change")
+                st.markdown("""<h4>Unemployment Annual Change</h4>""",unsafe_allow_html=True)
+
                 fig_labour = make_subplots()
 
 
@@ -521,7 +556,7 @@ if selected_option == 'Economic Data':
 
                 st.plotly_chart(fig_labour, use_container_width=True)
         st.markdown("""
-            <h4 style="color:#59afe1">Healthy Unemployment Rate Global Standards</h4>
+            <h4 style="color:#25A6E0">Healthy Unemployment Rate Global Standards</h4>
             
             |Global Standards|min|max|
             |---|---|---|
@@ -529,16 +564,18 @@ if selected_option == 'Economic Data':
             |European Union|Less than 7|7| 
             
             <h3></h3>
-            <h3>Findings</h3>
-            
+            <h2 style="color:#25A6E0">Findings</h2>
+
             - Considering 2015 as a year of robust economic expansion, the average unemployment rate from 2015 to 2019 stood at 4.4%, which is indicative of favorable economic growth.
             - The COVID-19 crisis in 2019 led to an uptick in unemployment, a trend experienced by numerous countries. chart showing that the situation is now gradually stabilizing.
             - The unemployment rate has consistently remained within the range of 3.3% to 5.2% from 2000 to 2022, aligning with global standards for unemployment levels.
             - The overall unemployment figures, in conjunction with population, GDP, and GDP per capita, all exhibit a positive correlation, portraying a favorable economic outlook for Bangladesh.
             """, unsafe_allow_html=True)
         
-        st.subheader("Countries unemployment Rates")
-        st.subheader("")
+        # st.subheader("Countries unemployment Rates")
+        st.markdown("""<h1 style="color:#25A6E0">Countries unemployment Rates</h1>""",unsafe_allow_html=True)
+
+        st.markdown("##")
         
         world_unemployment = pd.read_csv("world_unemployment.csv")
         p1_world_unemployment = world_unemployment[:93]
@@ -553,9 +590,14 @@ if selected_option == 'Economic Data':
         
     if econimic_menu == 'Trade':
         
+        st.markdown("""<h1 style="color:#25A6E0">Exports and Imports</h1>""",unsafe_allow_html=True)
+        
+        # st.markdown("#")
+        st.markdown("""<h4>Top 10 Bangladesh Exports by Country Over Time</h4>""",unsafe_allow_html=True)
+        
         fig_exports = px.area(exports_melted, x='Year', y='Exports', color='Country', 
               labels={'Year': 'Year', 'Exports': 'Exports'},
-              title='Top 10 Bangladesh Exports by Country Over Time',
+            #   title='Top 10 Bangladesh Exports by Country Over Time',
               color_discrete_sequence=px.colors.qualitative.Prism_r
               )
 
@@ -567,9 +609,12 @@ if selected_option == 'Economic Data':
         st.plotly_chart(fig_exports, use_container_width=True)
 
         
+        st.markdown("""<h4>Top 10 Bangladesh Imports by Country Over Time</h4>""",unsafe_allow_html=True)
+
+        
         fig_imports = px.area(imports_melted, x='Year', y='Imports', color='Country',
               labels={'Year': 'Year', 'Imports': 'Imports'},
-              title='Top 10 Bangladesh Imports by Country Over Time',
+            #   title='Top 10 Bangladesh Imports by Country Over Time',
               color_discrete_sequence=px.colors.qualitative.Prism
               )
         
@@ -589,7 +634,9 @@ elif selected_option == 'Companies Data':
     companies = pd.read_csv("all_companies_data.csv")
     
     st.sidebar.image('./unitech.png')
-    st.title("Key Players")
+    
+    st.markdown("""<h1 style="color:#25A6E0">Key Players</h1>""",unsafe_allow_html=True)
+
     st.sidebar.title("Bangladesh Companies Research")
     with st.sidebar:
        comapnies_menu =  option_menu(
@@ -601,13 +648,13 @@ elif selected_option == 'Companies Data':
             "container": {
                 "padding": "20px",
                 # "background-color": "#352f44",
-                "box-shadow": "0px 0px 5px 0px rgba(0, 0, 0, 0.25)",
+                "box-shadow": "0px 0px 5px 0px rgba(0, 0, 0, 0)",
             },
             "icon":{
                 "display": "none",
             },
             "nav-link": {
-                "font-size": "12px",
+                "font-size": "16px",
                 "text-align": "center",
                 "margin": "0px 0px",
                 # "color": "#ffffff",
@@ -628,6 +675,7 @@ elif selected_option == 'Companies Data':
     if comapnies_menu == "Construction and Engineering":
 
         st.subheader("Construction and Engineering")
+
         st.markdown("""
                     <small style="color:#59afe1;">--double click on the cell to view content--</small>\n
                     <small style="color:#59afe1;">--note column tells about top players--</small>""",
@@ -641,7 +689,10 @@ elif selected_option == 'Companies Data':
             'Plumbing', 'Electrical', 'Building Material', 'Drilling', 'Diamond Coring'
         ]
         
-        selected_construction_and_engineering_keywords = st.sidebar.multiselect("", construction_and_engineering_keywords)
+        
+        # st.markdown("""<h4>Key Players</h4>""",unsafe_allow_html=True)
+
+        selected_construction_and_engineering_keywords = st.multiselect("Filter key players", construction_and_engineering_keywords)
 
         selected_construction_and_engineering_keywords = [keyword.lower() for keyword in selected_construction_and_engineering_keywords]
 
@@ -679,7 +730,7 @@ elif selected_option == 'Companies Data':
             'Marine', 'Utility', 'Oil', 'Gas', 'Energy', 'Concrete'
         ]
         
-        selected_industry_and_manufacturing_keywords = st.sidebar.multiselect("", industry_and_manufacturing_keywords)
+        selected_industry_and_manufacturing_keywords = st.multiselect("Filter key players", industry_and_manufacturing_keywords)
 
         selected_industry_and_manufacturing_keywords = [keyword.lower() for keyword in selected_industry_and_manufacturing_keywords]
         
@@ -718,7 +769,7 @@ elif selected_option == 'Companies Data':
             
         ]
         
-        selected_real_estate_and_development_keywords = st.sidebar.multiselect("", real_estate_and_development_keywords)
+        selected_real_estate_and_development_keywords = st.multiselect("Filter key players", real_estate_and_development_keywords)
 
         selected_real_estate_and_development_keywords = [keyword.lower() for keyword in selected_real_estate_and_development_keywords]
         
@@ -760,7 +811,7 @@ elif selected_option == 'Companies Data':
  
         selected_business_and_supply_chain_keywords = [keyword.lower() for keyword in business_and_supply_chain_keywords]
 
-        selected_business_and_supply_chain_keywords = st.sidebar.multiselect("", business_and_supply_chain_keywords)
+        selected_business_and_supply_chain_keywords = st.multiselect("Filter key players", business_and_supply_chain_keywords)
 
  
         filtered_df = companies[
