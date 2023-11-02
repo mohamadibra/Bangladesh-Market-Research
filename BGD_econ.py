@@ -8,6 +8,8 @@ from streamlit_option_menu import option_menu
 import matplotlib.pyplot as plt
 from PIL import Image
 
+# #272343 dark blue
+# #25A6E0
 im = Image.open("unitech_logo_square.ico")
 
 st.set_page_config(page_title="Bangladesh Market",page_icon=im,layout="wide")
@@ -174,11 +176,13 @@ if selected_option == 'Economic Data':
                     shaping its future are meticulously dissected. Gain comprehensive insights into key indicators
                     defining Bangladesh's economic narrative. Navigate challenges and seize opportunities, all while pinpointing major 
                     contributors and anticipating their impact. Additionally, a detailed list of key players in the building and
-                    construction materials sector is included. This curated list, sortable by sectors: `Construction and
-                    Engineering`, `Industry and Manufacturing`, `Real Estate and Development`, and `Business and Supply Chain`,
+                    construction materials sector is included. This curated list, sortable by sectors: <span style="color:#25A6E0">Construction and
+                    Engineering</span>, <span style="color:#25A6E0">Industry and Manufacturing</span>, <span style="color:#25A6E0">Real Estate and Development</span>,
+                    and <span style="color:#25A6E0">Business and Supply Chain</span>,
                     provides valuable information including company URLs, names, and notable projects. Embark on this enlightening
                     journey to gain valuable insights into the path ahead for this dynamic nation.**
-                    """)
+                    """,unsafe_allow_html=True
+                    )
         st.markdown("##")
 
         st.title("Population")
