@@ -14,24 +14,24 @@ im = Image.open("unitech_logo_square.ico")
 
 st.set_page_config(page_title="Bangladesh Market",page_icon=im,layout="wide")
 
-hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+# hide_streamlit_style = """
+#             <style>
+#             #MainMenu {visibility: hidden;}
+#             footer {visibility: hidden;}
+#             </style>
+#             """
+# st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
-st.markdown(
-    """
-    <style>
-        .st-emotion-cache-tjsokg.ef3psqc4 {
-            display: none;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+# st.markdown(
+#     """
+#     <style>
+#         .st-emotion-cache-tjsokg.ef3psqc4 {
+#             display: none;
+#         }
+#     </style>
+#     """,
+#     unsafe_allow_html=True
+# )
 
 bdg_exports = pd.read_excel('BDG_Exports.xlsx')
 bdg_imports = pd.read_excel('BDG_Imports.xlsx')
@@ -153,7 +153,7 @@ if selected_option == 'Economic Data':
             },
             "nav-link": {
                 "font-size": "16px",
-                "text-align": "center",
+                "text-align": "left",
                 "margin": "0px 0px",
                 # "color": "#ffffff",
                 "text-decoration": "none",
@@ -666,7 +666,7 @@ elif selected_option == 'Companies Data':
             },
             "nav-link": {
                 "font-size": "16px",
-                "text-align": "center",
+                "text-align": "left",
                 "margin": "0px 0px",
                 # "color": "#ffffff",
                 "text-decoration": "none",
