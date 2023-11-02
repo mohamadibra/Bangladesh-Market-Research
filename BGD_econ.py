@@ -22,13 +22,16 @@ hide_streamlit_style = """
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
-# Add custom CSS to hide the GitHub icon
-hide_github_icon = """
-#GithubIcon {
-  visibility: hidden;
-}
-"""
-st.markdown(hide_github_icon, unsafe_allow_html=True)
+st.markdown(
+    """
+    <style>
+        .st-emotion-cache-tjsokg.ef3psqc4 {
+            display: none;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 bdg_exports = pd.read_excel('BDG_Exports.xlsx')
 bdg_imports = pd.read_excel('BDG_Imports.xlsx')
