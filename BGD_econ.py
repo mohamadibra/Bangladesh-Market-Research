@@ -133,7 +133,7 @@ labour['label_unemployment_rate'] = labour['Unemployment Rate (%)'].apply(lambda
 
 if selected_option == 'Economic Data':
 
-    st.sidebar.image('./unitech.png')
+    st.sidebar.image('./unitech_logo.png')
     # st.sidebar.title(":blue[Bangladesh Economic Research]")
     st.sidebar.markdown("""<h1>Bangladesh Economic Research</h1>""",unsafe_allow_html=True)
     with st.sidebar:
@@ -644,7 +644,7 @@ elif selected_option == 'Companies Data':
     
     companies = pd.read_csv("all_companies_data.csv")
     
-    st.sidebar.image('./unitech.png')
+    st.sidebar.image('./unitech_logo.png')
     
     st.markdown("""<h1 style="color:#25A6E0">Key Players</h1>""",unsafe_allow_html=True)
 
