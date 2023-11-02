@@ -6,9 +6,11 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from streamlit_option_menu import option_menu
 import matplotlib.pyplot as plt
+from PIL import Image
 
+im = Image.open("unitech_logo_square.ico")
 
-st.set_page_config(page_title="Bangladesh Market",page_icon="",layout="wide")
+st.set_page_config(page_title="Bangladesh Market",page_icon=im,layout="wide")
 
 hide_streamlit_style = """
             <style>
@@ -118,6 +120,7 @@ labour['label_unemployment_rate'] = labour['Unemployment Rate (%)'].apply(lambda
 
 if selected_option == 'Economic Data':
 
+    st.sidebar.image('./unitech.png')
     st.sidebar.title("Bangladesh Economic Research")
     with st.sidebar:
        econimic_menu =  option_menu(
@@ -581,6 +584,7 @@ elif selected_option == 'Companies Data':
     
     companies = pd.read_csv("all_companies_data.csv")
     
+    st.sidebar.image('./unitech.png')
     st.title("Key Players")
     st.sidebar.title("Bangladesh Companies Research")
     with st.sidebar:
